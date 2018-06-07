@@ -13,7 +13,7 @@ return new Date().getFullYear();
 app.get('/',(req,res) => {
 //res.send('<h1>Hello Express</h1>');
 res.render('home.hbs',{
-text:'Home Page';
+text:'Home Page',
 });
 });
 
@@ -25,7 +25,7 @@ text:'About page',
 
 app.get('/projects',(req,res)=>{
 res.render('projects.hbs',{
-  text:'projects Home'
+  text:'projects Home',
 });
 });
 
