@@ -5,22 +5,27 @@ const port = process.env.PORT || 3000;
 var app = express();
 app.set('view engine', 'hbs');
 hbs.registerPartials(__dirname+'/views/partials');
+hbs.registerHelper('getCurrentYear',()=>{
+return new Date().getFullYear();
+
+});
 
 app.get('/',(req,res) => {
 //res.send('<h1>Hello Express</h1>');
-res.send({
-name:'chirag',
-likes: ['Bikes',
-      'Track',
-      'Movies'
-]
+res.render('home.hbs',{
+text:'Home Page';
 });
 });
 
 app.get('/about',(req,res)=>{
 res.render('about.hbs',{
 text:'About page',
-year: new Date().getFullYear()
+});
+});
+
+app.get('/projects',(req,res)=>{
+res.render('projects.hbs',{
+  text:'projects Home'
 });
 });
 
